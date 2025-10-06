@@ -196,7 +196,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
             <div className={styles.imageUploadInput}>
               <label htmlFor="file-upload-1">
                 <div className={styles.imageUploadInput__drop}>
-                  {/* {imageUrls[0] ? (
+                  {imageUrls[0] ? (
                     <div>
                       <img
                         className={styles.uploadImage}
@@ -208,40 +208,16 @@ export default function BoardWrite(props: IBoardWriteProps) {
                       />
                     </div>
                   ) : (
-                    data?.fetchBoard?.images?.[0] && (
-                      <div>
-                        <img
-                          className={styles.uploadImage}
-                          src={`https://storage.googleapis.com/${data.fetchBoard.images[0]}`}
-                        />
-                        <CloseCircleFilled
-                          className={styles.deleteBtn}
-                          onClick={onClickDeleteImage(0)}
-                        />
-                      </div>
-                    )
-                  )} */}
-                  {imageUrls[0] && (
-                    <div>
-                      <img
-                        className={styles.uploadImage}
-                        src={`https://storage.googleapis.com/${imageUrls[0]}`}
+                    <div className={styles.plusIcon}>
+                      <Image
+                        src="/icons/outline/add.svg"
+                        alt="AddIcon"
+                        width={24}
+                        height={24}
                       />
-                      <CloseCircleFilled
-                        className={styles.deleteBtn}
-                        onClick={onClickDeleteImage(0)}
-                      />
+                      <p>클릭해서 사진 업로드</p>
                     </div>
                   )}
-                  <div className={styles.plusIcon}>
-                    <Image
-                      src="/icons/outline/add.svg"
-                      alt="AddIcon"
-                      width={24}
-                      height={24}
-                    />
-                    <p>클릭해서 사진 업로드</p>
-                  </div>
                   <input
                     type="file"
                     id="file-upload-1"
@@ -252,7 +228,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
               </label>
               <label htmlFor="file-upload-2">
                 <div className={styles.imageUploadInput__drop}>
-                  {imageUrls[1] && (
+                  {imageUrls[1] ? (
                     <div>
                       <img
                         className={styles.uploadImage}
@@ -263,16 +239,17 @@ export default function BoardWrite(props: IBoardWriteProps) {
                         onClick={onClickDeleteImage(1)}
                       />
                     </div>
+                  ) : (
+                    <div className={styles.plusIcon}>
+                      <Image
+                        src="/icons/outline/add.svg"
+                        alt="AddIcon"
+                        width={24}
+                        height={24}
+                      />
+                      <p>클릭해서 사진 업로드</p>
+                    </div>
                   )}
-                  <div className={styles.plusIcon}>
-                    <Image
-                      src="/icons/outline/add.svg"
-                      alt="AddIcon"
-                      width={24}
-                      height={24}
-                    />
-                    <p>클릭해서 사진 업로드</p>
-                  </div>
                   <input
                     type="file"
                     id="file-upload-2"
@@ -283,7 +260,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
               </label>
               <label htmlFor="file-upload-3">
                 <div className={styles.imageUploadInput__drop}>
-                  {imageUrls[2] && (
+                  {imageUrls[2] ? (
                     <div>
                       <img
                         className={styles.uploadImage}
@@ -294,16 +271,17 @@ export default function BoardWrite(props: IBoardWriteProps) {
                         onClick={onClickDeleteImage(2)}
                       />
                     </div>
+                  ) : (
+                    <div className={styles.plusIcon}>
+                      <Image
+                        src="/icons/outline/add.svg"
+                        alt="AddIcon"
+                        width={24}
+                        height={24}
+                      />
+                      <p>클릭해서 사진 업로드</p>
+                    </div>
                   )}
-                  <div className={styles.plusIcon}>
-                    <Image
-                      src="/icons/outline/add.svg"
-                      alt="AddIcon"
-                      width={24}
-                      height={24}
-                    />
-                    <p>클릭해서 사진 업로드</p>
-                  </div>
                   <input
                     type="file"
                     id="file-upload-3"

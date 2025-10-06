@@ -200,6 +200,7 @@ export default function useBoardWrite() {
   };
   const onClickDeleteImage = (index: number) => (event: React.MouseEvent) => {
     // event.stopPropagation();
+    // event.preventDefault();
     event.preventDefault();
     const newUrls = [...imageUrls];
     newUrls[index] = "";
