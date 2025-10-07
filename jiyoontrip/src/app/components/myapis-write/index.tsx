@@ -1,12 +1,35 @@
 "use client";
 
 import { supabase } from "@/app/commons/libraries/supabaseClient";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 export default function MyApisWrite({ isEdit }) {
   const router = useRouter();
+  const params = useParams();
+  const postId = params.id;
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (isEdit && postId) {
+        const { data, error } = await supabase
+          .from("jiyoon")
+          .select("*")
+          .eq("id", postId)
+          .single();
+
+        if (error) {
+          alert("실패");
+        } else if (data) {
+          setTitle(data.title);
+          setContents(data.contents);
+        }
+      }
+    };
+    fetchPost();
+  }, [isEdit, postId]);
+
   const onClickSubmit = async () => {
     try {
       if (title !== "" && contents !== "") {
@@ -33,7 +56,10 @@ export default function MyApisWrite({ isEdit }) {
     }
   };
 
-  const onClickEdit = () => {};
+  const onClickEdit = async () => {
+    await supabase.from("jiyoon").update({ title, contents }).eq("id", postId).select();
+    router.push(`/myapis/${postId}`);
+  };
 
   return (
     <>
