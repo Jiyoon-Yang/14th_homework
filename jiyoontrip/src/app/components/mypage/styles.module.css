@@ -27,7 +27,7 @@
 .myprofile {
   display: flex;
   width: 1280px;
-  height: 332px;
+  height: 296px;
 }
 
 .userInfoBox {
@@ -52,7 +52,6 @@
   display: flex;
   align-items: center;
   height: 40px;
-  margin-bottom: 12px;
 }
 
 .profileImage {
@@ -86,7 +85,6 @@
   display: flex;
   align-items: center;
   height: 24px;
-  margin-bottom: 12px;
 }
 
 .pointValue {
@@ -214,6 +212,7 @@
   background-color: #ffffff;
   border-radius: 16px;
   padding: 24px 48px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
 }
 
 .tableWrapper {

@@ -8,38 +8,25 @@ import { useState } from "react";
 
 export default function Mypage() {
   const { register, formState } = useForm({ mode: "onChange" });
-  const [activeTab, setActiveTab] = useState<"myProduct" | "bookmark">(
-    "myProduct"
-  );
+  const [activeTab, setActiveTab] = useState<"myProduct" | "bookmark">("myProduct");
 
   return (
     <div className={styles.container}>
+      <div className={styles.gap}></div>
+
       <div className={styles.mypageLabel}>
         <h1 className={styles.title}>마이 페이지</h1>
       </div>
       <div className={styles.gap}></div>
       <div className={styles.myprofile}>
         <div className={styles.userInfoBox}>
-          <h2 className={styles.userInfoTitle}>내 정보</h2>
           <div className={styles.profileSection}>
             <div className={styles.profileImage}></div>
             <span className={styles.profileName}>김상훈</span>
-            <Image
-              src="/icons/filled/down_arrow.svg"
-              alt="더보기"
-              width={24}
-              height={24}
-              className={styles.dropdownIcon}
-            />
           </div>
           <div className={styles.divider}></div>
           <div className={styles.pointSection}>
-            <Image
-              src="/icons/outline/point.svg"
-              alt="포인트"
-              width={24}
-              height={24}
-            />
+            <Image src="/icons/outline/point.svg" alt="포인트" width={24} height={24} />
             <div className={styles.pointValue}>
               <span className={styles.pointNumber}>23,000</span>
               <span className={styles.pointUnit}>P</span>
@@ -77,6 +64,7 @@ export default function Mypage() {
           </div>
         </div>
       </div>
+      <div className={styles.gap}></div>
       <div className={styles.tabs}>
         <button
           className={`${styles.tabButton} ${
@@ -161,9 +149,7 @@ export default function Mypage() {
                   <div className={styles.tableCell} style={{ width: "848px" }}>
                     <span
                       className={
-                        isGray
-                          ? styles.tableCellProductGray
-                          : styles.tableCellProduct
+                        isGray ? styles.tableCellProductGray : styles.tableCellProduct
                       }
                     >
                       파르나스 호텔 제주
