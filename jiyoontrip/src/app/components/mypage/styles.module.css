@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.gap {
+  width: 1280px;
+  height: 40px;
+}
+
+.mypageLabel {
+  width: 1280px;
+  height: 36px;
+}
+
+.myprofile {
+  width: 1280px;
+  height: 332px;
+}
+
+.tabs {
+  width: 1280px;
+  height: 40px;
+}
+
+.gapSmall {
+  width: 1280px;
+  height: 24px;
+}
+
+.searchbar {
+  width: 1280px;
+  height: 48px;
+}
+
+.listArea {
+  width: 1280px;
+  height: 656px;
+}
+
