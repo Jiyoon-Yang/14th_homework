@@ -17,7 +17,6 @@
 }
 
 .title {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
@@ -42,7 +41,6 @@
 }
 
 .userInfoTitle {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
@@ -66,7 +64,6 @@
 }
 
 .profileName {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -99,7 +96,6 @@
 }
 
 .pointNumber {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -108,7 +104,6 @@
 }
 
 .pointUnit {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -139,7 +134,6 @@
 }
 
 .menuTabText {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -164,7 +158,6 @@
   align-items: center;
   height: 40px;
   padding: 8px 16px;
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -239,7 +232,6 @@
 .tableHeaderCell {
   display: flex;
   align-items: center;
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -269,7 +261,6 @@
 }
 
 .tableCellNumber {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
@@ -277,7 +268,6 @@
 }
 
 .tableCellProduct {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -286,7 +276,6 @@
 }
 
 .tableCellProductGray {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -295,7 +284,6 @@
 }
 
 .tableCellStatus {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
@@ -303,7 +291,6 @@
 }
 
 .tableCellPrice {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
@@ -311,7 +298,6 @@
 }
 
 .tableCellDate {
-  font-family: "Pretendard Variable", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
