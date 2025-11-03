@@ -19,13 +19,17 @@
 조건-파일경로) 구현될 CSS 파일경로: src/app/components/boards-write/styles.module.css
 
 ==============================================
-
-핵심요구사항) 다음의 조건에 맞게 일기쓰기 폼 등록 기능을 step-by-step 으로 구현하고, 적용 결과를 체크리스트로 반환할 것.
+기존히스토리) 다음의 조건에 맞게 일기쓰기 폼 등록 기능을 step-by-step 으로 구현하고, 적용 결과를 체크리스트로 반환할 것.
             1) 라이브러리조건
                 - 폼: 이미 설치되어있는 react-hook-form, @hookform/resolvers를 사용할 것.
                 - 검증: 이미 설치되어있는 zod를 사용할 것.
             2) 공동컴포넌트인 src/app/commons/components/input/index.tsx 수정 금지.
 
 
-핵심요구사항) src/app/components/boards-write/index.tsx 안에 있는 input을 
-           src/app/commons/components/input/index.tsx 에 있는 인풋 컴포넌트를 사용해서 수정할 것.
+기존히스토리) src/app/components/boards-write/index.tsx 안에 있는 input을 
+           src/app/commons/components/input/index.tsx 에 있는 인풋 컴포넌트를 사용해서 수기존히스토리
+
+==============================================
+핵심요구사항) MyButton의 ui를 아래 노드ID 참고해서 수정할 것.
+          노드ID(정보 미입력시): 285:32418
+          노드ID(정보 모두 입력시): 285:32453
