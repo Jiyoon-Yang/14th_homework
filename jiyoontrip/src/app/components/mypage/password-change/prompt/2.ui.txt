@@ -37,3 +37,4 @@
                     - 새 비밀번호, 새 비밀번호 확인 인풋: <MyInput />
                     - 비밀번호 변경 버튼: <Button />
 
+핵심요구사항) index.tsx,styles.module.css 만 구현할 것. hook 구현 금지

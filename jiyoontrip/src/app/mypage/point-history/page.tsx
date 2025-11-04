@@ -4,3 +4,4 @@ export default function PointHistoryPage() {
   return <PointHistory />;
 }
 
+
