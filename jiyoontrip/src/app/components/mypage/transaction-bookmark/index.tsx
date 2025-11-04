@@ -6,7 +6,7 @@ import MyButton from "@/app/commons/components/button";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Mypage() {
+export default function TransactionBookmark() {
   const { register, formState } = useForm({ mode: "onChange" });
   const [activeTab, setActiveTab] = useState<"myProduct" | "bookmark">("myProduct");
 
