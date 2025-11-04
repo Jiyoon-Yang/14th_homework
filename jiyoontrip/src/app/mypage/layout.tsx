@@ -1,6 +1,6 @@
 "use client";
-import styles from "./layout.module.css";
 import Image from "next/image";
+import styles from "./layout.module.css";
 
 export default function MypageLayout({
   children,
