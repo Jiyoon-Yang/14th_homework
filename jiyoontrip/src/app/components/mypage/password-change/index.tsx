@@ -1,38 +1,12 @@
 "use client";
 
+import usePasswordChange from "./hook";
 import styles from "./styles.module.css";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import MyInput from "@/app/commons/components/input";
 import MyButton from "@/app/commons/components/button";
 
-const schema = z
-  .object({
-    newPassword: z
-      .string()
-      .min(1, "새 비밀번호를 입력해 주세요."),
-    confirmPassword: z
-      .string()
-      .min(1, "새 비밀번호를 확인해 주세요."),
-  })
-  .refine((data) => data.newPassword === data.confirmPassword, {
-    message: "비밀번호가 일치하지 않습니다.",
-    path: ["confirmPassword"],
-  });
-
-type FormData = z.infer<typeof schema>;
-
 export default function PasswordChange() {
-  const { register, handleSubmit, formState } = useForm<FormData>({
-    resolver: zodResolver(schema),
-    mode: "onChange",
-  });
-
-  const onSubmit = (data: FormData) => {
-    console.log("비밀번호 변경:", data);
-    // 비밀번호 변경 로직 구현
-  };
+  const { register, handleSubmit, formState, onSubmit } = usePasswordChange();
 
   return (
     <form className={styles.passwordArea} onSubmit={handleSubmit(onSubmit)}>
