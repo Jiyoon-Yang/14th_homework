@@ -1,11 +1,78 @@
-.container {
+.passwordArea {
   display: flex;
   flex-direction: column;
   width: 1280px;
+  height: 296px;
 }
 
-.passwordArea {
+.title {
   display: flex;
   width: 1280px;
-  height: 296px;
+  height: 24px;
+  font-family: "Pretendard Variable";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  height: 248px;
+  margin-top: 24px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  height: 176px;
+  gap: 16px;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  height: 80px;
+  gap: 8px;
+}
+
+.labelArea {
+  display: flex;
+  width: 1280px;
+  height: 24px;
+}
+
+.label {
+  font-family: "Pretendard Variable";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.required {
+  font-family: "Pretendard Variable";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f66a6a;
+  margin-left: 4px;
+}
+
+.inputContainer {
+  display: flex;
+  width: 1280px;
+  height: 48px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 1280px;
+  height: 48px;
+  margin-top: 24px;
 }

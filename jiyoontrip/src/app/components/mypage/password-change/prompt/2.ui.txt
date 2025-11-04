@@ -11,16 +11,16 @@
 ==============================================
 
 조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: grx7ttpw)
-조건-피그마) 구현될 컴포넌트 노드ID(tabs): 285:31168
-조건-피그마) 구현될 컴포넌트 노드ID(list-area): 285:31173
+조건-피그마) 구현될 컴포넌트 노드ID(mypageLabel): 285:30847
 
-조건-파일경로) 구현될 TSX 파일경로: src/app/components/mypage/point-history/index.tsx
-조건-파일경로) 구현될 CSS 파일경로: src/app/components/mypage/point-history/styles.module.css
+조건-파일경로) 구현될 TSX 파일경로: src/app/components/mypage/password-change/index.tsx
+조건-파일경로) 구현될 CSS 파일경로: src/app/components/mypage/password-change/styles.module.css
+
 
 ==============================================
 
 조건-공통목록) 사용할 공통컴포넌트 목록
-            -  <MyButton />
+            - <MyInput />, <MyButton />
 
 조건-공통목록) 사용할 색상 목록
             - 피그마 디자인 그대로 구현할 것.
@@ -30,13 +30,10 @@
 
 ==============================================
 
-핵심요구사항) MCP를 연동하여 피그마의 디자인을 그대로 와이어프레임의 tabs, list-area 영역에 그대로 소스코드로 구현할 것.
+핵심요구사항) MCP를 연동하여 피그마의 디자인을 그대로 와이어프레임의 mypageLabel, myprofile, tabs, searchbar, listArea 영역에 그대로 소스코드로 구현할 것.
 
 핵심요구사항)  적용될 공통컴포넌트 목록을 구현할 것.
-                1) tabs
-                    - 전체: <Button />
-                    - 충전내역: <Button />
-                    - 구매내역: <Button />
-                    - 판매내역: <Button />
-핵심요구사항) list-area에 shadow 넣을 것.
+                1) password-area
+                    - 새 비밀번호, 새 비밀번호 확인 인풋: <MyInput />
+                    - 비밀번호 변경 버튼: <Button />
 
