@@ -115,6 +115,15 @@ export default function TransactionBookmark() {
                   >
                     <span className={styles.tableCellDate}>2024.12.16</span>
                   </div>
+                  <div className={styles.deleteIconWrapper}>
+                    <Image
+                      src="/icons/outline/delete.svg"
+                      alt="삭제"
+                      width={24}
+                      height={24}
+                      className={styles.deleteIcon}
+                    />
+                  </div>
                 </div>
               );
             })}

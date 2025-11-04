@@ -114,6 +114,10 @@
   padding: 12px 0;
 }
 
+.tableRow:hover .deleteIconWrapper {
+  opacity: 1;
+}
+
 .tableCell {
   display: flex;
   align-items: center;
@@ -162,4 +166,22 @@
   font-weight: 300;
   line-height: 20px;
   color: #919191;
+}
+
+.deleteIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  width: 24px;
+  height: 24px;
 }
