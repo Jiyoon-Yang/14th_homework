@@ -115,7 +115,7 @@ export default function TransactionBookmark() {
                   >
                     <span className={styles.tableCellDate}>2024.12.16</span>
                   </div>
-                  <div className={styles.deleteIconWrapper}>
+                  <button className={styles.deleteIconWrapper}>
                     <Image
                       src="/icons/outline/delete.svg"
                       alt="삭제"
@@ -123,7 +123,7 @@ export default function TransactionBookmark() {
                       height={24}
                       className={styles.deleteIcon}
                     />
-                  </div>
+                  </button>
                 </div>
               );
             })}

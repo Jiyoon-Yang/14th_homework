@@ -115,7 +115,7 @@
 }
 
 .tableRow:hover .deleteIconWrapper {
-  opacity: 1;
+  visibility: visible;
 }
 
 .tableCell {
@@ -176,7 +176,10 @@
   height: 24px;
   margin-left: auto;
   margin-right: 24px;
-  opacity: 0;
+  visibility: hidden;
+  border: none;
+  background: none;
+  padding: 0;
   cursor: pointer;
 }
 
