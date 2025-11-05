@@ -183,7 +183,7 @@ export default function PurchaseDetail() {
         <div className={styles.map}>
           <h2 className={styles.sectionTitle}>상세 위치</h2>
           <div className={styles.mapContainer}>
-            <div className={styles.mapImage}></div>
+            <div className={styles.mapImage}>지도입니다</div>
           </div>
         </div>
         <div className={styles.gap40}></div>
@@ -249,15 +249,6 @@ export default function PurchaseDetail() {
               </p>
               <div className={styles.inquiryItemFooter}>
                 <span className={styles.inquiryDate}>2024.11.11</span>
-              </div>
-              <div className={styles.inquiryReply}>
-                <Image
-                  src="/icons/outline/reply.svg"
-                  alt="답변"
-                  width={24}
-                  height={24}
-                />
-                <span className={styles.inquiryReplyText}>답변 하기</span>
               </div>
             </div>
           </div>
