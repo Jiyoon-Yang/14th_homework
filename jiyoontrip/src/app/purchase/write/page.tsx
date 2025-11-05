@@ -1,3 +1,5 @@
+import PurchaseWrite from "@/app/components/purchase-write";
+
 export default function PurchaseWritePage() {
-  return <div>Purchase Write Page</div>;
+  return <PurchaseWrite />;
 }

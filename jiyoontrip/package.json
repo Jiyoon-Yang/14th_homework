@@ -26,6 +26,8 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-kakao-maps-sdk": "^1.2.0",
     "react-youtube": "^10.1.0",
+    "suneditor": "^2.47.8",
+    "suneditor-react": "^3.6.1",
     "swiper": "^12.0.1",
     "zod": "^4.1.12",
     "zustand": "^5.0.8"
