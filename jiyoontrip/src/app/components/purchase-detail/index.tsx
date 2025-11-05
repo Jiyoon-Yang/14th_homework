@@ -129,8 +129,9 @@ export default function PurchaseDetail() {
             </div>
           </div>
         </div>
-        <div className={styles.gap80}></div>
+        <div className={styles.gap40}></div>
         <div className={styles.divider}></div>
+        <div className={styles.gap40}></div>
         <div className={styles.content}>
           <h2 className={styles.sectionTitle}>상세 설명</h2>
           <p className={styles.description}>
@@ -176,8 +177,9 @@ export default function PurchaseDetail() {
             얄리얄리 얄라셩 얄라리 얄라
           </p>
         </div>
-        <div className={styles.gap80}></div>
+        <div className={styles.gap40}></div>
         <div className={styles.divider}></div>
+        <div className={styles.gap40}></div>
         <div className={styles.map}>
           <h2 className={styles.sectionTitle}>상세 위치</h2>
           <div className={styles.mapContainer}>
