@@ -9,18 +9,8 @@ export default function PurchaseDetail() {
           <div className={styles.titleTop}>
             <h1 className={styles.titleText}>포항 : 숙박권 명이 여기에 들어갑니다</h1>
             <div className={styles.titleIcons}>
-              <Image
-                src="/icons/outline/delete.svg"
-                alt="삭제"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/icons/outline/link.svg"
-                alt="링크"
-                width={24}
-                height={24}
-              />
+              <Image src="/icons/outline/delete.svg" alt="삭제" width={24} height={24} />
+              <Image src="/icons/outline/link.svg" alt="링크" width={24} height={24} />
               <Image
                 src="/icons/outline/location.svg"
                 alt="위치"
@@ -39,9 +29,7 @@ export default function PurchaseDetail() {
             </div>
           </div>
           <p className={styles.subtitle}>모던한 분위기의 감도높은 숙소</p>
-          <p className={styles.hashtags}>
-            #6인 이하 #건식 사우나 #애견동반 가능
-          </p>
+          <p className={styles.hashtags}>#6인 이하 #건식 사우나 #애견동반 가능</p>
         </div>
         <div className={styles.gap24}></div>
         <div className={styles.purchaseArea}>
@@ -49,42 +37,49 @@ export default function PurchaseDetail() {
             <Image
               src="/images/Rectangle 3011.png"
               alt="숙소 메인 이미지"
-              fill
-              style={{ objectFit: "cover" }}
+              width={640}
+              height={480}
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </div>
           <div className={styles.thumbnailList}>
-            <div className={styles.thumbnail}>
-              <Image
-                src="/images/Rectangle 3028.png"
-                alt="숙소 이미지 1"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className={styles.thumbnail}>
-              <Image
-                src="/images/Rectangle 3029.png"
-                alt="숙소 이미지 2"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className={styles.thumbnail}>
-              <Image
-                src="/images/Rectangle 3030.png"
-                alt="숙소 이미지 3"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className={styles.thumbnail}>
-              <Image
-                src="/images/Rectangle 3031.png"
-                alt="숙소 이미지 4"
-                fill
-                style={{ objectFit: "cover" }}
-              />
+            <div className={styles.thumbnailWrapper}>
+              <div className={styles.thumbnail}>
+                <Image
+                  src="/images/Rectangle 3028.png"
+                  alt="숙소 이미지 1"
+                  width={180}
+                  height={136}
+                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                />
+              </div>
+              <div className={styles.thumbnail}>
+                <Image
+                  src="/images/Rectangle 3029.png"
+                  alt="숙소 이미지 2"
+                  width={180}
+                  height={136}
+                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                />
+              </div>
+              <div className={styles.thumbnail}>
+                <Image
+                  src="/images/Rectangle 3030.png"
+                  alt="숙소 이미지 3"
+                  width={180}
+                  height={136}
+                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                />
+              </div>
+              <div className={styles.thumbnail}>
+                <Image
+                  src="/images/Rectangle 3031.png"
+                  alt="숙소 이미지 4"
+                  width={180}
+                  height={136}
+                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                />
+              </div>
             </div>
             <div className={styles.gradient}></div>
           </div>
@@ -93,12 +88,11 @@ export default function PurchaseDetail() {
         <div className={styles.content}>
           <h2 className={styles.sectionTitle}>상세 설명</h2>
           <p className={styles.description}>
-            살어리 살어리랏다 쳥산(靑山)애 살어리랏다 멀위랑 ᄃᆞ래랑 먹고
-            쳥산(靑山)애 살어리랏다 얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라
-            새여 자고 니러 우러라 새여 널라와 시름 한 나도 자고 니러 우니로라
-            리얄리 얄라셩 얄라리 얄라 가던 새 가던 새 본다 믈 아래 가던 새 본다
-            잉무든 장글란 가지고 믈 아래 가던 새 본다 얄리얄리 얄라셩 얄라리
-            얄라
+            살어리 살어리랏다 쳥산(靑山)애 살어리랏다 멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
+            살어리랏다 얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러 우러라
+            새여 널라와 시름 한 나도 자고 니러 우니로라 리얄리 얄라셩 얄라리 얄라 가던 새
+            가던 새 본다 믈 아래 가던 새 본다 잉무든 장글란 가지고 믈 아래 가던 새 본다
+            얄리얄리 얄라셩 얄라리 얄라
             <br />
             <br />
             이링공 뎌링공 ᄒᆞ야 나즈란 디내와손뎌

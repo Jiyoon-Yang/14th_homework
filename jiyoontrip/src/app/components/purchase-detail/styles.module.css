@@ -100,7 +100,7 @@
 }
 
 .mainImage {
-  position: relative;
+  display: flex;
   width: 640px;
   height: 480px;
   border-radius: 8px;
@@ -108,16 +108,22 @@
 }
 
 .thumbnailList {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 180px;
   height: 480px;
 }
 
+.thumbnailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 180px;
+  flex: 1;
+}
+
 .thumbnail {
-  position: relative;
+  display: flex;
   width: 180px;
   height: 136px;
   border-radius: 8px;
@@ -125,10 +131,11 @@
 }
 
 .gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: flex;
   width: 180px;
+  height: 0;
+  flex-shrink: 0;
+  margin-top: -480px;
   height: 480px;
   background: linear-gradient(
     180deg,
@@ -236,7 +243,6 @@
 }
 
 .inputWrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
