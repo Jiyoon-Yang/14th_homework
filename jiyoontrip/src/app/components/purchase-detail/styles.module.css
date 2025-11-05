@@ -1,0 +1,67 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  width: 1280px;
+  height: 96px;
+  background-color: #ffcccc;
+}
+
+.gap24 {
+  width: 1280px;
+  height: 24px;
+}
+
+.purchaseArea {
+  display: flex;
+  width: 1280px;
+  height: 480px;
+  background-color: #ccffcc;
+}
+
+.gap80 {
+  width: 1280px;
+  height: 80px;
+}
+
+.content {
+  display: flex;
+  width: 844px;
+  height: 596px;
+  background-color: #ccccff;
+  align-self: flex-start;
+}
+
+.map {
+  display: flex;
+  width: 844px;
+  height: 324px;
+  background-color: #ffffcc;
+  align-self: flex-start;
+}
+
+.gap40 {
+  width: 1280px;
+  height: 40px;
+}
+
+.retrospect {
+  display: flex;
+  width: 1280px;
+  height: 316px;
+  background-color: #ffccff;
+}

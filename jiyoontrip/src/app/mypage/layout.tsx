@@ -2,11 +2,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 
-export default function MypageLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function MypageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.layoutContainer}>
       <div className={styles.gap}></div>
@@ -17,6 +13,7 @@ export default function MypageLayout({
       <div className={styles.gap}></div>
       <div className={styles.myprofile}>
         <div className={styles.userInfoBox}>
+          <h2 className={styles.userInfoLabel}>내 정보</h2>
           <div className={styles.profileSection}>
             <div className={styles.profileImage}></div>
             <span className={styles.profileName}>김상훈</span>

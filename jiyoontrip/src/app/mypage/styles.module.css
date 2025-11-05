@@ -17,9 +17,11 @@
 }
 
 .title {
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
+  letter-spacing: 0;
   color: #000000;
   margin: 0;
 }
@@ -40,6 +42,16 @@
   border-radius: 8px;
 }
 
+.userInfoLabel {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
 .profileSection {
   display: flex;
   align-items: center;
@@ -55,9 +67,11 @@
 }
 
 .profileName {
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  letter-spacing: 0;
   color: #333333;
   margin-right: 6px;
 }
@@ -82,17 +96,21 @@
 }
 
 .pointNumber {
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0;
   color: #000000;
   margin-right: 4px;
 }
 
 .pointUnit {
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
+  letter-spacing: 0;
   color: #000000;
 }
 
@@ -120,13 +138,14 @@
 }
 
 .menuTabText {
+  font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 0;
   color: #000000;
 }
 
 .menuTabActive .menuTabText {
   font-weight: 600;
 }
-
