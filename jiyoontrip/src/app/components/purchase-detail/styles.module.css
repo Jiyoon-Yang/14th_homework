@@ -321,6 +321,91 @@
   padding: 20px 0;
 }
 
+.inquiryItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.inquiryItemHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 24px;
+}
+
+.inquiryProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.inquiryProfileImage {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.inquiryProfileName {
+  font-family: Pretendard Variable;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5f5f5f;
+}
+
+.inquiryActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.inquiryItemContent {
+  font-family: Pretendard Variable;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 0;
+}
+
+.inquiryItemFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 24px;
+}
+
+.inquiryDate {
+  font-family: Pretendard Variable;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #818181;
+}
+
+.inquiryReply {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.inquiryReplyText {
+  font-family: Pretendard Variable;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
 .purchaseBox {
   display: flex;
   flex-direction: column;

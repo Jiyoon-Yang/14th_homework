@@ -211,7 +211,55 @@ export default function PurchaseDetail() {
             </div>
           </div>
           <div className={styles.inquiryList}>
-            <p className={styles.noInquiry}>등록된 문의사항이 없습니다.</p>
+            <div className={styles.inquiryItem}>
+              <div className={styles.inquiryItemHeader}>
+                <div className={styles.inquiryProfile}>
+                  <div className={styles.inquiryProfileImage}>
+                    <Image
+                      src="/images/h.png"
+                      alt="프로필"
+                      width={24}
+                      height={24}
+                      style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                    />
+                  </div>
+                  <span className={styles.inquiryProfileName}>홍길동</span>
+                </div>
+                <div className={styles.inquiryActions}>
+                  <Image
+                    src="/icons/outline/edit.svg"
+                    alt="수정"
+                    width={20}
+                    height={20}
+                  />
+                  <Image
+                    src="/icons/outline/close.svg"
+                    alt="삭제"
+                    width={20}
+                    height={20}
+                  />
+                </div>
+              </div>
+              <p className={styles.inquiryItemContent}>
+                살겠노라 살겠노라. 청산에 살겠노라.
+                <br />
+                머루랑 다래를 먹고 청산에 살겠노라.
+                <br />
+                얄리얄리 얄랑셩 얄라리 얄라
+              </p>
+              <div className={styles.inquiryItemFooter}>
+                <span className={styles.inquiryDate}>2024.11.11</span>
+              </div>
+              <div className={styles.inquiryReply}>
+                <Image
+                  src="/icons/outline/reply.svg"
+                  alt="답변"
+                  width={24}
+                  height={24}
+                />
+                <span className={styles.inquiryReplyText}>답변 하기</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.gap40}></div>
