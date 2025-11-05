@@ -1,5 +1,5 @@
-import styles from "./styles.module.css";
 import Image from "next/image";
+import styles from "./styles.module.css";
 
 export default function PurchaseDetail() {
   return (
@@ -9,7 +9,12 @@ export default function PurchaseDetail() {
           <div className={styles.titleTop}>
             <h1 className={styles.titleText}>포항 : 숙박권 명이 여기에 들어갑니다</h1>
             <div className={styles.titleIcons}>
-              <Image src="/icons/outline/delete.svg" alt="삭제" width={24} height={24} />
+              <Image
+                src="/icons/outline/blackdelete.svg"
+                alt="삭제"
+                width={24}
+                height={24}
+              />
               <Image src="/icons/outline/link.svg" alt="링크" width={24} height={24} />
               <Image
                 src="/icons/outline/location.svg"
@@ -83,8 +88,49 @@ export default function PurchaseDetail() {
             </div>
             <div className={styles.gradient}></div>
           </div>
+          <div className={styles.purchaseBox}>
+            <div className={styles.purchaseCard}>
+              <div className={styles.priceInfo}>
+                <div className={styles.priceRow}>
+                  <p className={styles.priceAmount}>32,500</p>
+                  <p className={styles.priceUnit}>원</p>
+                </div>
+                <div className={styles.purchaseNotice}>
+                  <p className={styles.noticeText}>
+                    숙박권은 트립트립에서 포인트 충전 후 구매하실 수 있습니다.
+                  </p>
+                  <p className={styles.noticeTextLight}>
+                    상세 설명에 숙박권 사용기한을 꼭 확인해 주세요.
+                  </p>
+                </div>
+              </div>
+              <button className={styles.purchaseButton}>구매하기</button>
+            </div>
+            <div className={styles.sellerCard}>
+              <p className={styles.sellerTitle}>판매자</p>
+              <div className={styles.sellerProfile}>
+                <div className={styles.sellerImageWrapper}>
+                  <Image
+                    src="/images/h.png"
+                    alt="판매자 프로필"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  />
+                </div>
+                <p className={styles.sellerName}>김상훈</p>
+                <Image
+                  src="/icons/filled/down_arrow.svg"
+                  alt="더보기"
+                  width={24}
+                  height={24}
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className={styles.gap80}></div>
+        <div className={styles.divider}></div>
         <div className={styles.content}>
           <h2 className={styles.sectionTitle}>상세 설명</h2>
           <p className={styles.description}>
@@ -131,6 +177,7 @@ export default function PurchaseDetail() {
           </p>
         </div>
         <div className={styles.gap80}></div>
+        <div className={styles.divider}></div>
         <div className={styles.map}>
           <h2 className={styles.sectionTitle}>상세 위치</h2>
           <div className={styles.mapContainer}>
@@ -161,7 +208,9 @@ export default function PurchaseDetail() {
               <button className={styles.inquiryButton}>문의 하기</button>
             </div>
           </div>
-          <p className={styles.noInquiry}>등록된 문의사항이 없습니다.</p>
+          <div className={styles.inquiryList}>
+            <p className={styles.noInquiry}>등록된 문의사항이 없습니다.</p>
+          </div>
         </div>
         <div className={styles.gap40}></div>
       </div>
