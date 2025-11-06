@@ -24,6 +24,12 @@ export default function NavigationComponent() {
   const onClickHomepage = () => {
     router.push("/boards");
   };
+  const onClickPurchase = () => {
+    router.push("/purchase");
+  };
+  const onClickMypage = () => {
+    router.push("/mypage/transaction-bookmark");
+  };
   return (
     <>
       <div className={styles.navigation__layout}>
@@ -46,8 +52,8 @@ export default function NavigationComponent() {
               >
                 트립토크
               </button>
-              <button className={styles.navigation__left__menu__size}>숙박권 구매</button>
-              <button className={styles.navigation__left__menu__size}>마이페이지</button>
+              <button className={styles.navigation__left__menu__size} onClick={onClickPurchase}>숙박권 구매</button>
+              <button className={styles.navigation__left__menu__size} onClick={onClickMypage}>마이페이지</button>
             </div>
           </div>
           <div className={styles.navigation__right}>
