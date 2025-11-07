@@ -44,15 +44,7 @@ export default function ModalProvider({ children }: IProps) {
               zIndex: 1000,
             }}
           >
-            <div
-              style={{
-                backgroundColor: "white",
-                borderRadius: "8px",
-                padding: "20px",
-              }}
-            >
-              {content}
-            </div>
+            {content}
           </div>,
           document.body
         )}
