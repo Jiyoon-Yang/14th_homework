@@ -1,68 +1,40 @@
 "use client";
 
-import { create } from "zustand";
-import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
-import styles from "./styles.module.css";
+import { createPortal } from "react-dom";
+import { useModalStore } from "../../stores/store";
+import styles from "./modal.provider.module.css";
 
-interface ModalState {
-  isOpen: boolean;
-  content: React.ReactNode;
-  openModal: (content: React.ReactNode) => void;
-  closeModal: () => void;
-}
-
-export const useModalStore = create<ModalState>((set) => ({
-  isOpen: false,
-  content: null,
-  openModal: (content: React.ReactNode) =>
-    set({ isOpen: true, content: content }),
-  closeModal: () => set({ isOpen: false, content: null }),
-}));
-
-interface IModalProviderProps {
+interface IProps {
   children: React.ReactNode;
 }
 
-function Modal() {
+export default function ModalProvider({ children }: IProps) {
   const { isOpen, content, closeModal } = useModalStore();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    return () => setMounted(false);
   }, []);
 
-  useEffect(() => {
-    if (!isOpen) return;
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
 
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeModal();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [isOpen, closeModal]);
-
-  if (!mounted || !isOpen) return null;
-
-  return createPortal(
-    <div className={styles.backdrop} onClick={closeModal}>
-      <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
-        {content}
-      </div>
-    </div>,
-    document.body
-  );
-}
-
-export default function ModalProvider({ children }: IModalProviderProps) {
   return (
     <>
       {children}
-      <Modal />
+      {mounted &&
+        isOpen &&
+        createPortal(
+          <div className={styles.backdrop} onClick={handleBackdropClick}>
+            <div className={styles.modal}>{content}</div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
-
