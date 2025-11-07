@@ -39,10 +39,8 @@
             2) 조건
                 - CSS는 cursor: pointer만 추가할 것.
                 - 경로를 하드코딩하지 말고, url.ts를 import 하여 적용할 것.
-
-            3) header 영역
-                - 로고(민지의다이어리): url.ts에 정의된 일기목록페이지 => /diaries
-
-            4) navigation 영역
-                - 일기보관함: url.ts에 정의된 일기목록페이지 => /diaries
-                - 사진보관함: url.ts에 정의된 사진목록페이지 => /pictures
+            3) navigation 영역
+                - 트립토크: url.ts에 정의된 트립토크페이지 => /boards
+                - 숙박권 구매: url.ts에 정의된 숙박권구매페이지 => /purchase
+                - 마이 페이지: url.ts에 정의된 마이페이지 => /mypage/transaction-bookmark
+                - 로그인: url.ts에 정의된 로그인페이지 => /auth/signin
