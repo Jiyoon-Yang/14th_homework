@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useModalStore } from "../../stores/store";
-import styles from "./modal.provider.module.css";
 
 interface IProps {
   children: React.ReactNode;
@@ -18,7 +17,7 @@ export default function ModalProvider({ children }: IProps) {
     return () => setMounted(false);
   }, []);
 
-  const handleBackdropClick = (e: React.MouseEvent) => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       closeModal();
     }
@@ -30,8 +29,30 @@ export default function ModalProvider({ children }: IProps) {
       {mounted &&
         isOpen &&
         createPortal(
-          <div className={styles.backdrop} onClick={handleBackdropClick}>
-            <div className={styles.modal}>{content}</div>
+          <div
+            onClick={handleBackdropClick}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 1000,
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: "white",
+                borderRadius: "8px",
+                padding: "20px",
+              }}
+            >
+              {content}
+            </div>
           </div>,
           document.body
         )}
