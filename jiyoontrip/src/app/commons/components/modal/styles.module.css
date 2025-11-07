@@ -1,23 +1,23 @@
 .modal {
   display: flex;
   flex-direction: column;
-  width: 480px;
-  background-color: #ffffff;
-  border-radius: 24px;
-  padding: 24px;
-  gap: 24px;
+  width: 30rem;
+  background-color: var(--Gray-W, #fff);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  gap: 1.5rem;
 }
 
 .modal--info {
-  background-color: #ffffff;
+  background-color: var(--Gray-W, #fff);
 }
 
 .modal--danger {
-  background-color: #ffffff;
+  background-color: var(--Gray-W, #fff);
 }
 
 .modal--light {
-  background-color: #ffffff;
+  background-color: var(--Gray-W, #fff);
 }
 
 .modal--dark {
@@ -31,37 +31,35 @@
 }
 
 .modal__content--cash {
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .modal__textArea {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
   align-items: center;
 }
 
 .modal__title {
-  font-family: var(--globalFont);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 1.5rem;
   text-align: center;
-  color: #000000;
+  color: var(--gray-B, #000);
   margin: 0;
 }
 
 .modal--dark .modal__title {
-  color: #ffffff;
+  color: var(--Gray-W, #fff);
 }
 
 .modal__description {
-  font-family: var(--globalFont);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1.25rem;
   text-align: center;
-  color: #333333;
+  color: var(--gray-800, #333);
   margin: 0;
 }
 
@@ -79,38 +77,36 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #c7c7c7;
-  border-radius: 8px;
-  background-color: #ffffff;
+  height: 2.5rem;
+  padding: 0 0.625rem;
+  border: 0.0625rem solid var(--Gray-Gray-200, #c7c7c7);
+  border-radius: 0.5rem;
+  background-color: var(--Gray-W, #fff);
   cursor: pointer;
 }
 
 .modal__dropdown__placeholder {
-  font-family: var(--globalFont);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.25rem;
   color: #919191;
 }
 
 .modal__dropdown__text {
-  font-family: var(--globalFont);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 20px;
-  color: #5f5f5f;
+  line-height: 1.25rem;
+  color: var(--gray-700, #5f5f5f);
 }
 
 .modal__dropdownList {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 0.25rem);
   left: 0;
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 8px;
+  background-color: var(--Gray-W, #fff);
+  border: 0.0625rem solid var(--gray-B, #000);
+  border-radius: 0.5rem;
   overflow: hidden;
   z-index: 10;
 }
@@ -119,58 +115,55 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 40px;
-  padding: 0 12px;
-  background-color: #ffffff;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  background-color: var(--Gray-W, #fff);
   border: none;
   cursor: pointer;
 }
 
 .modal__dropdownItem:hover {
-  background-color: #f5f5f5;
+  background-color: var(--gray-50, #f2f2f2);
 }
 
 .modal__dropdownItem__text {
-  font-family: var(--globalFont);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 20px;
-  color: #5f5f5f;
+  line-height: 1.25rem;
+  color: var(--gray-700, #5f5f5f);
 }
 
 .modal__buttonArea {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .modal__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 40px;
-  border-radius: 8px;
-  font-family: var(--globalFont);
-  font-size: 14px;
+  width: 7.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.25rem;
   cursor: pointer;
 }
 
 .modal__button--primary {
   background-color: #2974e5;
-  color: #ffffff;
+  color: var(--Gray-W, #fff);
   border: none;
 }
 
 .modal__button--secondary {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--Gray-W, #fff);
+  color: var(--gray-B, #000);
+  border: 0.0625rem solid var(--gray-B, #000);
 }
 
 .modal--danger .modal__button--primary {
-  background-color: #e53935;
+  background-color: var(--red, #e53935);
 }
-
