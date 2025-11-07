@@ -45,17 +45,19 @@ export default function Modal({
     }
   };
 
-  const modalClassName = `${styles.modal} ${styles[`modal--${variant}`]} ${styles[`modal--${theme}`]}`;
-  const contentClassName = `${styles.modal__content} ${actions === "cash" ? styles["modal__content--cash"] : ""}`;
+  const modalClassName = `${styles.modal} ${styles[`modal--${variant}`]} ${
+    styles[`modal--${theme}`]
+  }`;
+  const contentClassName = `${styles.modal__content} ${
+    actions === "cash" ? styles["modal__content--cash"] : ""
+  }`;
 
   return (
     <div className={modalClassName}>
       <div className={contentClassName}>
         <div className={styles.modal__textArea}>
           <h2 className={styles.modal__title}>{title}</h2>
-          {description && (
-            <p className={styles.modal__description}>{description}</p>
-          )}
+          {description && <p className={styles.modal__description}>{description}</p>}
         </div>
 
         {actions === "cash" && (
@@ -65,7 +67,13 @@ export default function Modal({
               className={styles.modal__dropdown}
               onClick={handleDropdownToggle}
             >
-              <span className={selectedOption ? styles.modal__dropdown__text : styles.modal__dropdown__placeholder}>
+              <span
+                className={
+                  selectedOption
+                    ? styles.modal__dropdown__text
+                    : styles.modal__dropdown__placeholder
+                }
+              >
                 {selectedOption || "내용입력"}
               </span>
               <Image
@@ -126,4 +134,3 @@ export default function Modal({
     </div>
   );
 }
-
