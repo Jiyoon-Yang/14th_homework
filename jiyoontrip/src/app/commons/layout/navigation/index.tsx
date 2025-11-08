@@ -6,8 +6,7 @@ import { useQuery } from "@apollo/client";
 import { FETCH_USER_LOGGED_IN } from "./queires";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ROUTES } from "../../constants/url";
-
+import { ROUTES } from "../../../commons/constants/url";
 export default function NavigationComponent() {
   const router = useRouter();
   const pathname = usePathname();
@@ -34,11 +33,9 @@ export default function NavigationComponent() {
     router.push(ROUTES.MYPAGE.TRANSACTION_BOOKMARK);
   };
 
-  // 현재 경로에 따라 액티브 상태 판단
-  const isActiveBoards = pathname.startsWith("/boards");
-  const isActivePurchase = pathname.startsWith("/purchase");
+  const isActiveBoards = pathname === ROUTES.BOARDS.LIST || pathname.startsWith("/boards");
+  const isActivePurchase = pathname === ROUTES.PURCHASE.LIST || pathname.startsWith("/purchase");
   const isActiveMypage = pathname.startsWith("/mypage");
-
   return (
     <>
       <div className={styles.navigation__layout} data-testid="navigation">
@@ -56,27 +53,21 @@ export default function NavigationComponent() {
             </button>
             <div className={styles.navigation__left__menu}>
               <button
-                className={`${styles.navigation__left__menu__size} ${
-                  isActiveBoards ? styles.active : ""
-                }`}
+                className={`${styles.navigation__left__menu__size} ${isActiveBoards ? styles.navigation__left__menu__size__active : ""}`}
                 onClick={onClickHomepage}
                 data-testid="nav-boards"
               >
                 트립토크
               </button>
               <button
-                className={`${styles.navigation__left__menu__size} ${
-                  isActivePurchase ? styles.active : ""
-                }`}
+                className={`${styles.navigation__left__menu__size} ${isActivePurchase ? styles.navigation__left__menu__size__active : ""}`}
                 onClick={onClickPurchase}
                 data-testid="nav-purchase"
               >
                 숙박권 구매
               </button>
               <button
-                className={`${styles.navigation__left__menu__size} ${
-                  isActiveMypage ? styles.active : ""
-                }`}
+                className={`${styles.navigation__left__menu__size} ${isActiveMypage ? styles.navigation__left__menu__size__active : ""}`}
                 onClick={onClickMypage}
                 data-testid="nav-mypage"
               >
@@ -103,11 +94,7 @@ export default function NavigationComponent() {
                 />
               </>
             ) : (
-              <button
-                className={styles.loginButton}
-                onClick={onClickLogin}
-                data-testid="nav-login"
-              >
+              <button className={styles.loginButton} onClick={onClickLogin} data-testid="nav-login">
                 로그인
                 <Image
                   src="/icons/outline/whiterighticon.svg"

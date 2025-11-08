@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.navigation__left__menu__size.active {
+.navigation__left__menu__size__active {
   border-bottom: 1px solid #000;
 }
 
@@ -54,5 +54,4 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.25rem;
-  cursor: pointer;
 }

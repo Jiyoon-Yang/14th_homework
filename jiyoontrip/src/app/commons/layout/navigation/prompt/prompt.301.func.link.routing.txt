@@ -8,7 +8,7 @@
             - @04-func.mdc
 
 ==============================================
-조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: wqrb5bpm)
+조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: bp00sd8q)
 
 조건-파일경로) 참고할 TSX  파일경로: src/app/commons/layout/index.tsx
 조건-파일경로) 참고할 CSS  파일경로: src/app/commons/layout/styles.module.css
