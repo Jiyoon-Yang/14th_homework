@@ -17,6 +17,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.64.0(react@18.3.1))
+      '@portone/browser-sdk':
+        specifier: ^0.1.1
+        version: 0.1.1
       '@supabase/supabase-js':
         specifier: ^2.58.0
         version: 2.58.0
@@ -78,9 +81,6 @@ importers:
       '@graphql-codegen/client-preset':
         specifier: 5.0.0
         version: 5.0.0(graphql@16.11.0)
-      '@playwright/test':
-        specifier: ^1.56.1
-        version: 1.56.1
       '@storybook/addon-essentials':
         specifier: ^8.6.14
         version: 8.6.14(@types/react@18.3.24)(storybook@8.6.14)
@@ -1638,6 +1638,9 @@ packages:
         optional: true
       webpack-plugin-serve:
         optional: true
+
+  '@portone/browser-sdk@0.1.1':
+    resolution: {integrity: sha512-5s3153gfgkICYqEo4KKZNIQLTfUBd7vTf0r4+Z8G1B8CQU2mwUw7VVUtdFDhnfABa1TvftErnME6FIgr2sApKQ==}
 
   '@rc-component/async-validator@5.0.4':
     resolution: {integrity: sha512-qgGdcVIF604M9EqjNF0hbUTz42bz/RDtxWdWuU5EQe3hi7M8ob54B6B35rOsvX5eSvIHIzT9iH1R3n+hk3CGfg==}
@@ -7549,6 +7552,7 @@ snapshots:
   '@playwright/test@1.56.1':
     dependencies:
       playwright: 1.56.1
+    optional: true
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.17(react-refresh@0.14.2)(type-fest@2.19.0)(webpack-hot-middleware@2.26.1)(webpack@5.102.1(esbuild@0.25.12))':
     dependencies:
@@ -7564,6 +7568,8 @@ snapshots:
     optionalDependencies:
       type-fest: 2.19.0
       webpack-hot-middleware: 2.26.1
+
+  '@portone/browser-sdk@0.1.1': {}
 
   '@rc-component/async-validator@5.0.4':
     dependencies:
@@ -10926,13 +10932,15 @@ snapshots:
     dependencies:
       find-up: 6.3.0
 
-  playwright-core@1.56.1: {}
+  playwright-core@1.56.1:
+    optional: true
 
   playwright@1.56.1:
     dependencies:
       playwright-core: 1.56.1
     optionalDependencies:
       fsevents: 2.3.2
+    optional: true
 
   pnp-webpack-plugin@1.7.0(typescript@5.9.2):
     dependencies:
