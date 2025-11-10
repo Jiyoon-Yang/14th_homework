@@ -1,11 +1,11 @@
 "use client";
 
-import { useModalStore } from "@/app/commons/stores/store";
-import Modal from "@/app/commons/components/modal";
 import { useState } from "react";
 import PortOne from "@portone/browser-sdk/v2";
+import { useModalStore } from "@/app/commons/stores/store";
+import Modal from "@/app/commons/components/modal";
 
-export function usePurchaseModal() {
+export default function usePurchaseModal() {
   const { openModal, closeModal } = useModalStore();
   const [selectedAmount, setSelectedAmount] = useState<string>("10000");
 
