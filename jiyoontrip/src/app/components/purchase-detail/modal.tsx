@@ -38,4 +38,3 @@ export default function PurchaseModal({ onClose }: PurchaseModalProps) {
     </div>
   );
 }
-

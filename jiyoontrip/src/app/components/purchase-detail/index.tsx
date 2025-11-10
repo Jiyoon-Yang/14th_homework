@@ -2,18 +2,16 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { usePurchaseModal } from "./hooks/index.link.modal.hook";
+import usePurchaseModal from "./hooks/index.link.modal.hook";
 import PurchaseModal from "./modal";
 
 export default function PurchaseDetail() {
   const { handleOpenPurchaseModal, handleClosePurchaseModal } = usePurchaseModal();
-
   const handlePurchaseClick = () => {
     handleOpenPurchaseModal(
       <PurchaseModal onClose={handleClosePurchaseModal} />
     );
   };
-
   return (
     <div className={styles.page} data-testid="purchase-detail-page">
       <div className={styles.container}>
