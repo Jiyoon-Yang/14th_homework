@@ -2,9 +2,12 @@
 
 import { useModalStore } from "@/app/commons/stores/store";
 import Modal from "@/app/commons/components/modal";
+import { useState } from "react";
+import PortOne from "@portone/browser-sdk/v2";
 
 export function usePurchaseModal() {
   const { openModal, closeModal } = useModalStore();
+  const [selectedAmount, setSelectedAmount] = useState<string>("10000");
 
   const openPurchaseConfirmModal = () => {
     openModal(
@@ -44,6 +47,50 @@ export function usePurchaseModal() {
     );
   };
 
+  const handlePortonePayment = async (amount: number) => {
+    try {
+      const storeId = process.env.NEXT_PUBLIC_PORTONE_STORE_ID;
+      const channelKey = process.env.NEXT_PUBLIC_PORTONE_CHANNEL_KEY;
+
+      if (!storeId || !channelKey) {
+        console.error("포트원 설정이 올바르지 않습니다.");
+        return;
+      }
+
+      const randomId = () => {
+        return Array.from(crypto.getRandomValues(new Uint32Array(2)))
+          .map((word) => word.toString(16).padStart(8, "0"))
+          .join("");
+      };
+
+      const paymentId = randomId();
+      const payment = await PortOne.requestPayment({
+        storeId,
+        channelKey,
+        paymentId,
+        orderName: "포인트 충전",
+        totalAmount: amount,
+        currency: "CURRENCY_KRW",
+        payMethod: "EASY_PAY",
+      });
+
+      if (!payment) {
+        console.error("결제 응답이 없습니다.");
+        return;
+      }
+
+      if (payment.code !== undefined) {
+        console.error("결제 실패:", payment.message);
+        return;
+      }
+
+      console.log("결제 성공:", payment);
+      closeModal();
+    } catch (error) {
+      console.error("결제 처리 중 오류 발생:", error);
+    }
+  };
+
   const openChargeModal = () => {
     const chargeOptions = [
       { value: "10000", label: "10,000원" },
@@ -62,9 +109,11 @@ export function usePurchaseModal() {
           dropdownOptions={chargeOptions}
           onCancel={closeModal}
           onConfirm={() => {
-            closeModal();
+            const amount = parseInt(selectedAmount, 10);
+            handlePortonePayment(amount);
           }}
           onDropdownChange={(value) => {
+            setSelectedAmount(value);
             console.log("Selected charge amount:", value);
           }}
         />
