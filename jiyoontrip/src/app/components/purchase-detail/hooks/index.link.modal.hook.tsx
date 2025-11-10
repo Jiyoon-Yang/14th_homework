@@ -1,3 +1,5 @@
+"use client";
+
 import { useModalStore } from "@/app/commons/stores/store";
 import Modal from "@/app/commons/components/modal";
 
