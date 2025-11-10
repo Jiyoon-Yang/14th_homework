@@ -53,7 +53,7 @@ export default function Modal({
   }`;
 
   return (
-    <div className={modalClassName}>
+    <div className={modalClassName} onClick={(e) => e.stopPropagation()}>
       <div className={contentClassName}>
         <div className={styles.modal__textArea}>
           <h2 className={styles.modal__title}>{title}</h2>
@@ -66,6 +66,7 @@ export default function Modal({
               type="button"
               className={styles.modal__dropdown}
               onClick={handleDropdownToggle}
+              data-testid="modal-dropdown"
             >
               <span
                 className={
@@ -91,6 +92,7 @@ export default function Modal({
                     type="button"
                     className={styles.modal__dropdownItem}
                     onClick={() => handleOptionSelect(option.value, option.label)}
+                    data-testid="modal-dropdown-option"
                   >
                     <span className={styles.modal__dropdownItem__text}>
                       {option.label}
@@ -109,6 +111,7 @@ export default function Modal({
             type="button"
             className={`${styles.modal__button} ${styles["modal__button--primary"]}`}
             onClick={onConfirm}
+            data-testid="modal-confirm-button"
           >
             {confirmText}
           </button>
@@ -118,6 +121,7 @@ export default function Modal({
               type="button"
               className={`${styles.modal__button} ${styles["modal__button--secondary"]}`}
               onClick={onCancel}
+              data-testid="modal-cancel-button"
             >
               {cancelText}
             </button>
@@ -125,6 +129,7 @@ export default function Modal({
               type="button"
               className={`${styles.modal__button} ${styles["modal__button--primary"]}`}
               onClick={onConfirm}
+              data-testid="modal-confirm-button"
             >
               {confirmText}
             </button>

@@ -2,16 +2,11 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import usePurchaseModal from "./hooks/index.link.modal.hook";
-import PurchaseModal from "./modal";
+import { usePurchaseModal } from "./hooks/index.link.modal.hook";
 
 export default function PurchaseDetail() {
-  const { handleOpenPurchaseModal, handleClosePurchaseModal } = usePurchaseModal();
-  const handlePurchaseClick = () => {
-    handleOpenPurchaseModal(
-      <PurchaseModal onClose={handleClosePurchaseModal} />
-    );
-  };
+  const { openPurchaseConfirmModal } = usePurchaseModal();
+
   return (
     <div className={styles.page} data-testid="purchase-detail-page">
       <div className={styles.container}>
@@ -114,10 +109,10 @@ export default function PurchaseDetail() {
                   </p>
                 </div>
               </div>
-              <button 
-                className={styles.purchaseButton} 
-                onClick={handlePurchaseClick}
+              <button
+                className={styles.purchaseButton}
                 data-testid="purchase-button"
+                onClick={openPurchaseConfirmModal}
               >
                 구매하기
               </button>
