@@ -520,3 +520,86 @@
   color: #333333;
   margin: 0;
 }
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  gap: 24px;
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalTitle {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  margin: 0;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalText {
+  font-family: Pretendard Variable;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  margin: 0;
+}
+
+.modalSubText {
+  font-family: Pretendard Variable;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #777777;
+  margin: 0;
+}
+
+.modalFooter {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modalCancelButton {
+  width: 100px;
+  height: 48px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  font-family: Pretendard Variable;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.modalConfirmButton {
+  width: 120px;
+  height: 48px;
+  background-color: #2974e5;
+  border: none;
+  border-radius: 8px;
+  font-family: Pretendard Variable;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}

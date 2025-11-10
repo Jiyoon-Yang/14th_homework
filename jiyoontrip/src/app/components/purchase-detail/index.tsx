@@ -1,9 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { usePurchaseModal } from "./hooks/index.link.modal.hook";
+import PurchaseModal from "./modal";
 
 export default function PurchaseDetail() {
+  const { handleOpenPurchaseModal, handleClosePurchaseModal } = usePurchaseModal();
+
+  const handlePurchaseClick = () => {
+    handleOpenPurchaseModal(
+      <PurchaseModal onClose={handleClosePurchaseModal} />
+    );
+  };
+
   return (
-    <div className={styles.page}>
+    <div className={styles.page} data-testid="purchase-detail-page">
       <div className={styles.container}>
         <div className={styles.title}>
           <div className={styles.titleTop}>
@@ -104,7 +116,13 @@ export default function PurchaseDetail() {
                   </p>
                 </div>
               </div>
-              <button className={styles.purchaseButton}>구매하기</button>
+              <button 
+                className={styles.purchaseButton} 
+                onClick={handlePurchaseClick}
+                data-testid="purchase-button"
+              >
+                구매하기
+              </button>
             </div>
             <div className={styles.sellerCard}>
               <p className={styles.sellerTitle}>판매자</p>
