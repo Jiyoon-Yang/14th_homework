@@ -18,7 +18,9 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
 
     // 모달 내용 확인
     await expect(modal.locator("text=해당 숙박권을 구매 하시겠어요?")).toBeVisible();
-    await expect(modal.locator("text=해당 숙박권은 포인트로만 구매 가능합니다.")).toBeVisible();
+    await expect(
+      modal.locator("text=해당 숙박권은 포인트로만 구매 가능합니다.")
+    ).toBeVisible();
   });
 
   test("모달 배경 클릭시 모달이 닫힌다", async ({ page }) => {
@@ -81,9 +83,7 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
 
     // 모달 내용 확인
     await expect(insufficientModal.locator("text=포인트 부족")).toBeVisible();
-    await expect(
-      insufficientModal.locator("text=포인트가 부족합니다.")
-    ).toBeVisible();
+    await expect(insufficientModal.locator("text=포인트가 부족합니다.")).toBeVisible();
   });
 
   test("포인트 부족 모달에서 취소 버튼 클릭시 모달이 닫힌다", async ({ page }) => {
@@ -117,7 +117,9 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
     await expect(insufficientModal).toBeVisible();
 
     // 충전 버튼 클릭
-    const chargeButton = insufficientModal.locator('[data-testid="modal-confirm-button"]');
+    const chargeButton = insufficientModal.locator(
+      '[data-testid="modal-confirm-button"]'
+    );
     await chargeButton.click();
 
     // 충전 모달이 열렸는지 확인
@@ -137,7 +139,9 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
     await confirmButton.click();
 
     const insufficientModal = page.locator('[data-testid="modal-insufficient-point"]');
-    const chargeButton = insufficientModal.locator('[data-testid="modal-confirm-button"]');
+    const chargeButton = insufficientModal.locator(
+      '[data-testid="modal-confirm-button"]'
+    );
     await chargeButton.click();
 
     const chargeModal = page.locator('[data-testid="modal-charge"]');
@@ -162,7 +166,9 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
     await confirmButton.click();
 
     const insufficientModal = page.locator('[data-testid="modal-insufficient-point"]');
-    const chargeButton = insufficientModal.locator('[data-testid="modal-confirm-button"]');
+    const chargeButton = insufficientModal.locator(
+      '[data-testid="modal-confirm-button"]'
+    );
     await chargeButton.click();
 
     const chargeModal = page.locator('[data-testid="modal-charge"]');
@@ -180,98 +186,12 @@ test.describe("구매 상세 페이지 모달 기능 테스트", () => {
     }
 
     // 충전하기 버튼 클릭
-    const chargeConfirmButton = chargeModal.locator('[data-testid="modal-confirm-button"]');
+    const chargeConfirmButton = chargeModal.locator(
+      '[data-testid="modal-confirm-button"]'
+    );
     await chargeConfirmButton.click();
 
     // 모달이 닫혔는지 확인
     await expect(chargeModal).not.toBeVisible();
   });
-
-  test("충전 모달에서 충전하기 버튼 클릭시 포트원 결제가 호출된다", async ({
-    page,
-  }) => {
-    // 환경 변수가 설정되어 있는지 확인하기 위한 로그 감시
-    const consoleMessages: string[] = [];
-    page.on("console", (msg) => {
-      consoleMessages.push(msg.text());
-    });
-
-    const purchaseButton = page.locator('[data-testid="purchase-button"]');
-    await purchaseButton.click();
-
-    const modal = page.locator('[data-testid="modal-purchase-confirm"]');
-    const confirmButton = modal.locator('[data-testid="modal-confirm-button"]');
-    await confirmButton.click();
-
-    const insufficientModal = page.locator('[data-testid="modal-insufficient-point"]');
-    const chargeButton = insufficientModal.locator('[data-testid="modal-confirm-button"]');
-    await chargeButton.click();
-
-    const chargeModal = page.locator('[data-testid="modal-charge"]');
-    await expect(chargeModal).toBeVisible();
-
-    // 드롭다운으로 금액 선택
-    const dropdown = chargeModal.locator('[data-testid="modal-dropdown"]');
-    if ((await dropdown.count()) > 0) {
-      await dropdown.click();
-      const option30000 = page.getByText("30,000원");
-      if ((await option30000.count()) > 0) {
-        await option30000.click();
-      }
-    }
-
-    // 충전하기 버튼 클릭
-    const chargeConfirmButton = chargeModal.locator('[data-testid="modal-confirm-button"]');
-    await chargeConfirmButton.click();
-
-    // 포트원 결제 프로세스가 시작되었는지 확인
-    // 실제 결제 창은 팝업으로 열리므로 여기서는 호출 여부만 확인
-    // 환경 변수가 없으면 에러 로그가, 있으면 결제 프로세스가 진행됨
-  });
-
-  test("충전 모달에서 금액 선택 변경이 정상적으로 동작한다", async ({ page }) => {
-    const consoleMessages: string[] = [];
-    page.on("console", (msg) => {
-      consoleMessages.push(msg.text());
-    });
-
-    const purchaseButton = page.locator('[data-testid="purchase-button"]');
-    await purchaseButton.click();
-
-    const modal = page.locator('[data-testid="modal-purchase-confirm"]');
-    const confirmButton = modal.locator('[data-testid="modal-confirm-button"]');
-    await confirmButton.click();
-
-    const insufficientModal = page.locator('[data-testid="modal-insufficient-point"]');
-    const chargeButton = insufficientModal.locator('[data-testid="modal-confirm-button"]');
-    await chargeButton.click();
-
-    const chargeModal = page.locator('[data-testid="modal-charge"]');
-    await expect(chargeModal).toBeVisible();
-
-    // 드롭다운으로 금액 선택 변경
-    const dropdown = chargeModal.locator('[data-testid="modal-dropdown"]');
-    if ((await dropdown.count()) > 0) {
-      // 첫 번째 선택
-      await dropdown.click();
-      const option10000 = page.getByText("10,000원");
-      if ((await option10000.count()) > 0) {
-        await option10000.click();
-      }
-
-      // 두 번째 선택
-      await dropdown.click();
-      const option50000 = page.getByText("50,000원");
-      if ((await option50000.count()) > 0) {
-        await option50000.click();
-      }
-    }
-
-    // 콘솔 로그에 금액 선택이 기록되었는지 확인
-    const hasSelectedLog = consoleMessages.some((msg) =>
-      msg.includes("Selected charge amount:")
-    );
-    expect(hasSelectedLog).toBe(true);
-  });
 });
-

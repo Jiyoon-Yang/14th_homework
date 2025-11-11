@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import PortOne from "@portone/browser-sdk/v2";
 import { useModalStore } from "@/app/commons/stores/store";
 import Modal from "@/app/commons/components/modal";
+import PortOne from "@portone/browser-sdk/v2";
 
 export default function usePurchaseModal() {
   const { openModal, closeModal } = useModalStore();
-  const [selectedAmount, setSelectedAmount] = useState<string>("10000");
+  const [selectedAmount, setSelectedAmount] = useState<string>("");
 
   const openPurchaseConfirmModal = () => {
     openModal(
@@ -24,7 +24,7 @@ export default function usePurchaseModal() {
             openInsufficientPointModal();
           }}
         />
-      </div>
+      </div>,
     );
   };
 
@@ -43,51 +43,46 @@ export default function usePurchaseModal() {
             openChargeModal();
           }}
         />
-      </div>
+      </div>,
     );
   };
 
-  const handlePortonePayment = async (amount: number) => {
+  const handlePortOnePayment = async (amount: string) => {
     try {
       const storeId = process.env.NEXT_PUBLIC_PORTONE_STORE_ID;
       const channelKey = process.env.NEXT_PUBLIC_PORTONE_CHANNEL_KEY;
 
       if (!storeId || !channelKey) {
-        console.error("포트원 설정이 올바르지 않습니다.");
+        console.error("포트원 환경 변수가 설정되지 않았습니다.");
         return;
       }
 
-      const randomId = () => {
-        return Array.from(crypto.getRandomValues(new Uint32Array(2)))
-          .map((word) => word.toString(16).padStart(8, "0"))
-          .join("");
-      };
+      const paymentId = `payment-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-      const paymentId = randomId();
-      const payment = await PortOne.requestPayment({
+      const response = await PortOne.requestPayment({
         storeId,
         channelKey,
         paymentId,
-        orderName: "포인트 충전",
-        totalAmount: amount,
-        currency: "CURRENCY_KRW",
+        orderName: `포인트 충전 ${parseInt(amount).toLocaleString()}원`,
+        totalAmount: parseInt(amount),
+        currency: "KRW",
         payMethod: "EASY_PAY",
       });
 
-      if (!payment) {
+      if (!response) {
         console.error("결제 응답이 없습니다.");
         return;
       }
 
-      if (payment.code !== undefined) {
-        console.error("결제 실패:", payment.message);
+      if (response.code !== undefined) {
+        console.error("결제 실패:", response.message);
         return;
       }
 
-      console.log("결제 성공:", payment);
+      console.log("결제 성공:", response);
       closeModal();
     } catch (error) {
-      console.error("결제 처리 중 오류 발생:", error);
+      console.error("결제 처리 중 오류:", error);
     }
   };
 
@@ -109,15 +104,17 @@ export default function usePurchaseModal() {
           dropdownOptions={chargeOptions}
           onCancel={closeModal}
           onConfirm={() => {
-            const amount = parseInt(selectedAmount, 10);
-            handlePortonePayment(amount);
+            if (selectedAmount) {
+              handlePortOnePayment(selectedAmount);
+            } else {
+              closeModal();
+            }
           }}
           onDropdownChange={(value) => {
             setSelectedAmount(value);
-            console.log("Selected charge amount:", value);
           }}
         />
-      </div>
+      </div>,
     );
   };
 
