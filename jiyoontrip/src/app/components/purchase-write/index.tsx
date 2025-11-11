@@ -9,7 +9,7 @@ import MyButton from "@/app/commons/components/button";
 import styles from "./styles.module.css";
 import "suneditor/dist/css/suneditor.min.css";
 import usePurchaseWriteModal from "./hooks/index.modal.hook";
-import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 
 const SunEditor = dynamic(() => import("suneditor-react"), { ssr: false });
 
@@ -32,6 +32,10 @@ export default function PurchaseWrite() {
 
   const lat = watch("lat");
   const lng = watch("lng");
+
+  useKakaoLoader({
+    appkey: process.env.NEXT_PUBLIC_KAKAOJSKEY as string,
+  });
 
   return (
     <>
