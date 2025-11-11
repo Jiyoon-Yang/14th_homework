@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useModalStore } from "@/app/commons/stores/store";
 import DaumPostcodeEmbed, { Address } from "react-daum-postcode";
 import { UseFormSetValue } from "react-hook-form";
@@ -33,7 +32,6 @@ export default function usePurchaseWriteModal({
   setValue,
 }: UsePurchaseWriteModalProps) {
   const { openModal, closeModal } = useModalStore();
-  const [coordinates, setCoordinates] = useState<{ lat: number; lng: number } | null>(null);
 
   const getCoordinatesFromAddress = async (address: string): Promise<{ lat: number; lng: number } | null> => {
     try {
@@ -76,7 +74,6 @@ export default function usePurchaseWriteModal({
     if (coords) {
       setValue("lat", coords.lat.toString());
       setValue("lng", coords.lng.toString());
-      setCoordinates(coords);
     }
 
     // 모달 닫기
@@ -104,6 +101,5 @@ export default function usePurchaseWriteModal({
   return {
     openAddressSearchModal,
     closeModal,
-    coordinates,
   };
 }
