@@ -32,7 +32,6 @@ export default function usePurchaseWriteModal({
   setValue,
 }: UsePurchaseWriteModalProps) {
   const { openModal, closeModal } = useModalStore();
-
   const getCoordinatesFromAddress = async (address: string): Promise<{ lat: number; lng: number } | null> => {
     try {
       if (typeof window === "undefined" || !window.google) {
@@ -62,7 +61,6 @@ export default function usePurchaseWriteModal({
       return null;
     }
   };
-
   const onCompleteAddress = async (data: Address) => {
     // 우편번호와 주소 설정
     setValue("zipcode", data.zonecode);
@@ -79,7 +77,6 @@ export default function usePurchaseWriteModal({
     // 모달 닫기
     closeModal();
   };
-
   const openAddressSearchModal = () => {
     openModal(
       <div 
@@ -97,7 +94,6 @@ export default function usePurchaseWriteModal({
       </div>
     );
   };
-
   return {
     openAddressSearchModal,
     closeModal,
